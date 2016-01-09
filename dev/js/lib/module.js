@@ -1,7 +1,6 @@
 class MyClass {
     constructor() {
         this.header = document.querySelector('.super-header')
-        this.header.addEventListener("click", this.log);
     }
 
     log() {
