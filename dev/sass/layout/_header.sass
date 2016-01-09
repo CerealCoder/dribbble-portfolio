@@ -1,0 +1,95 @@
+.intro
+    height: 45vh
+    max-height: 45vh
+    background-color: mediumseagreen
+    display: flex
+    justify-content: space-between
+    border-bottom: 4px solid black
+
+    > div
+        width: 50%
+
+.intro__title
+    background-color: #fff
+    display: flex
+    align-items: center
+    justify-content: center
+
+    h1
+        color: map-get($social, dribbble)
+
+        span
+            display: block
+            font-size: 3rem
+            text-transform: uppercase
+
+.intro__about
+    background-color: $papaya
+    display: flex
+    flex-direction: column
+    align-items: stretch
+
+    > div
+        flex: 1
+        height: 50vh
+
+.intro__about .blurb
+    display: flex
+    align-items: center
+    justify-content: center
+    background: url("/assets/img/chill.jpg") no-repeat center
+    background-size: cover
+    position: relative
+    color: white
+    text-align: center
+
+    &::before
+        +position(absolute, 0 0 0 0)
+        content: ""
+        background-color: fade-out(#333333, .092)
+
+    p
+        position: relative
+        max-width: 80vh
+        z-index: 2
+        font-weight: 600
+        line-height: 1.6
+
+.intro__about .skills
+
+    display: flex
+
+    > div
+        flex-basis: 50%
+
+.skills__list
+    background-color: $yellow
+    display: flex
+    align-items: center
+    justify-content: center
+    color: $marine
+    order: 1
+
+    ul
+        list-style: disc
+
+        li
+            font-weight: 600
+            margin-bottom: 8px
+            opacity: 0
+            animation: fadeInLeft .43s ease-in both
+
+
+            &:last-child
+                margin-bottom: 0
+
+.skills__title
+    display: flex
+    align-items: center
+    justify-content: center
+    background-color: $marine
+
+    h2
+        font-size: 3rem
+        text-transform: uppercase
+        color: $yellow
