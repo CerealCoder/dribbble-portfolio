@@ -1,0 +1,53 @@
+.testimonials
+    padding: 5em
+    background-color: $lightgrey
+    color: #333333
+    text-align: center
+
+.wrapper svg
+
+    +size(110px)
+    transform: rotate(-5deg)
+
+    path
+        fill: #333
+
+.testimonials__quotes
+    margin-top: 3em
+
+.testimonials__quote
+    font-size: 1.3em
+    line-height: 1.5
+
+    cite
+        display: block
+        margin-top: 1.3em
+
+.testimonials__faces
+
+    margin-top: 3em
+    display: flex
+    justify-content: center
+
+    ul
+        display: flex
+        align-items: center
+        justify-content: space-between
+
+
+        li
+            flex-basis: 18%
+            cursor: pointer
+            display: inline-block
+            border-radius: 50%
+            overflow: hidden
+            border: 1px solid #333
+            box-shadow: 0px 1px 3px #333
+            transition: all .2s ease
+
+            &:hover
+
+                box-shadow: 1px 3px 8px #333
+
+            img
+                display: block
