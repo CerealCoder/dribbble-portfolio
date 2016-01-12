@@ -1,33 +1,68 @@
 .shots
 
-    padding: 5em 3em
+    padding: 2.5em 1.5em 0
     background-color: map-get($social, dribbble)
     display: flex
     flex-wrap: wrap
     justify-content: space-between
+    flex-direction: column
+
+    +desktop-up
+        padding: 5em 3em
+        flex-direction: row
 
 .shots__shot
-    flex-basis: 24%
     position: relative
-    margin-bottom: 3em
-    border: 4px solid #333
+    margin-bottom: 2em
     overflow: hidden
+    border: 2px solid #333
+
+    +desktop-up
+        flex-basis: 24%
+        margin-bottom: 3em
+        border: 4px solid #333
+
+        &:hover .shot__info
+            background-color: fade-out(lighten($slate, 25%), .2)
+
+            .shot-caption
+                visibility: visible
+                opacity: 1
+
+                .meta
+                    opacity: 1
+                    transform: translateY(0)
+            .shot-stats
+                transform: translateY(0)
 
     img
         display: block
 
-    &:hover .shot__info
-        background-color: fade-out(lighten($slate, 25%), .2)
+.mobile-shot-info
 
-        .shot-caption
-            visibility: visible
-            opacity: 1
+    display: flex
+    align-items: center
+    justify-content: space-between
+    background-color: $lightgrey
+    padding: .5em 1em
+    text-align: center
+    color: #333
 
-            .meta
-                opacity: 1
-                transform: translateY(0)
-        .shot-stats
-            transform: translateY(0)
+
+    .shot__link--mobile
+
+        display: inherit
+        animation: pulseScale 1s ease-out both infinite
+
+        svg
+
+            +size(20px)
+
+            path
+                fill: map-get($social, dribbble)
+
+    +desktop-up
+        display: none
 
 .shot__info
     +position(absolute, 0 0 0 0 )

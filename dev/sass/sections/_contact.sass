@@ -1,11 +1,15 @@
 .contact
 
     display: flex
-    height: 40vh
-    overflow: hidden
+    flex-direction: column
 
-    > div
-        flex-basis: 50%
+    +desktop-up
+        height: 40vh
+        flex-direction: row
+        overflow: hidden
+
+        > div
+            flex-basis: 50%
 
 .contact__title
     background: #333
@@ -14,17 +18,27 @@
     justify-content: center
     flex-direction: column
     color: $yellow
+    padding: 3em 0
+
+    +desktop-up
+        padding: 0
 
     h3
         font-size: 4em
         text-transform: uppercase
         letter-spacing: 0.05em
-        margin-bottom: 2rem
+
+        +desktop-up
+            margin-bottom: 2rem
 
 .toggle-overlay
     overflow: hidden
     position: relative
     font-size: 1.5em
+    display: none
+
+    +desktop-up
+        display: block
 
     &:hover
 
@@ -66,8 +80,13 @@
 .contact__map
     position: relative
     background-color: #e4a5f9
+    display: none
+
+    +desktop-up
+        display: block
 
 .map-overlay
+
     position: absolute
     top: 0
     left: 0
@@ -113,3 +132,33 @@
         path
 
             fill: #333
+
+.mobile-social
+
+    padding: 3em 0
+    background-color: $yellow
+
+    ul
+        width: 80%
+        margin: 0 auto
+        display: flex
+        align-items: center
+        justify-content: center
+
+        li
+
+            margin-right: 1.4em
+
+            &:last-child
+                margin-right: 0
+
+            a
+
+                svg
+                    +size(40px)
+
+                    path
+                        fill: #333
+
+    +desktop-up
+        display: none

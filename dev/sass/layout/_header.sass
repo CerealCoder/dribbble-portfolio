@@ -1,26 +1,39 @@
 .intro
-    height: 50vh
-    max-height: 50vh
-    background-color: mediumseagreen
     display: flex
+    flex-direction: column
     justify-content: space-between
 
-    > div
-        width: 50%
+    +desktop-up
+        height: 50vh
+        max-height: 50vh
+        display: flex
+        flex-direction: row
+
+        > div
+            width: 50%
 
 .intro__title
-    background-color: #fff
+
     display: flex
     align-items: center
     justify-content: center
+    padding: 2em
+
+    +desktop-up
+        background-color: #fff
+        padding: 0
 
     h1
         color: map-get($social, dribbble)
 
         span
             display: block
-            font-size: 3rem
+            font-size: 2rem
             text-transform: uppercase
+
+
+            +desktop-up
+                font-size: 3rem
 
 .intro__about
     background-color: $papaya
@@ -28,11 +41,14 @@
     flex-direction: column
     align-items: stretch
 
-    > div
-        flex: 1
-        height: 50vh
+    +desktop-up
+
+        > div
+            flex: 1
+            height: 50vh
 
 .intro__about .blurb
+    padding: 1.5em 0
     display: flex
     align-items: center
     justify-content: center
@@ -42,6 +58,10 @@
     color: white
     text-align: center
 
+    +desktop-up
+        padding: 0
+
+
     &::before
         +position(absolute, 0 0 0 0)
         content: ""
@@ -49,17 +69,26 @@
 
     p
         position: relative
-        max-width: 80vh
+        width: 80%
         z-index: 2
         font-weight: 600
-        line-height: 1.6
+        line-height: 1.4
+        font-size: 1em
+
+        +desktop-up
+            max-width: 80vh
+            line-height: 1.6
 
 .intro__about .skills
 
     display: flex
+    flex-direction: column
 
-    > div
-        flex-basis: 50%
+    +desktop-up
+        flex-direction: row
+        > div
+            flex-basis: 50%
+            padding: 0
 
 .skills__list
     background-color: $yellow
@@ -68,6 +97,7 @@
     justify-content: center
     color: $marine
     order: 1
+    padding: 3em 0
 
     ul
         list-style: disc
@@ -87,6 +117,7 @@
     align-items: center
     justify-content: center
     background-color: $marine
+    padding: 3em 0
 
     h2
         font-size: 3rem
