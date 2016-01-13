@@ -7,15 +7,20 @@
     justify-content: space-between
     flex-direction: column
 
+    +tablet-up
+        flex-direction: row
+
     +desktop-up
         padding: 5em 3em
-        flex-direction: row
 
 .shots__shot
     position: relative
     margin-bottom: 2em
     overflow: hidden
     border: 2px solid #333
+
+    +tablet-up
+        flex-basis: 49%
 
     +desktop-up
         flex-basis: 24%
@@ -136,11 +141,14 @@
 .shot-stats
     background-color: white
     height: 25%
-    display: flex
+    display: none
     align-items: center
     justify-content: center
     transform: translateY(100%)
     transition: all .3s ease
+
+    +desktop-up
+        display: flex
 
     span
         margin-right: 1em
