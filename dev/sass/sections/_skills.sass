@@ -1,10 +1,13 @@
 .skills
 
     display: flex
+    flex-direction: column
+
+    +desktop-up
+        flex-direction: row
 
 .skills__box
 
-    flex-basis: 33.333%
     display: flex
     flex-direction: column
     align-items: center
@@ -30,14 +33,28 @@
 
     h3
         text-transform: uppercase
-        font-size: 2em
-
+        font-size: 1.4em
         text-shadow: 1px 1px 1px #333
         align-self: flex-start
         margin-bottom: 1rem
 
+        +tablet
+            font-size: 3rem
+            margin-bottom: 3rem
+
+        +desktop-up
+            font-size: 2rem
+
     ul li
 
         font-weight: 600
-        font-size: 1.1em
-        margin-bottom: .5rem
+        font-size: 1em
+        margin-bottom: .2rem
+
+        +tablet
+            font-size: 1.6em
+            margin-bottom: 1em
+
+        +desktop-up
+            font-size: 1.1em
+            margin-bottom: .7rem

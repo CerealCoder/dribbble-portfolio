@@ -1,11 +1,17 @@
 .social
     background-color: $tertiary
     color: #333
-    padding: 4em 0
+    padding: 2.5em 0
+
+    +tablet-up
+        padding: 4em 0
 
 .social__title
     text-align: center
-    font-size: 3rem
+    font-size: 2.2rem
+
+    +tablet-up
+        font-size: 3rem
 
 .social__links
 
@@ -15,8 +21,17 @@
     justify-content: center
 
     li
-        margin-right: 2em
+        margin-right: 1.2em
+
+        &:last-child
+            margin-right: 0
 
         a svg
 
-            +size(55px)
+            +size(30px)
+
+        +tablet-up
+            margin-right: 2em
+
+            a svg
+                +size(55px)

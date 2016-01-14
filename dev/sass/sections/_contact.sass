@@ -20,16 +20,20 @@
     justify-content: center
     flex-direction: column
     color: $frost-white
+    padding: 2.5em 0
+
+    +tablet
+        padding: 4em 0
 
     +desktop-up
         padding: 0
 
     h2
-        font-size: 4em
+        font-size: 3rem
         text-transform: uppercase
         letter-spacing: 0.05em
 
-        +tablet-up
+        +desktop-up
             font-size: 5rem
 
 .toggle-overlay
@@ -80,7 +84,6 @@
 
 .contact__map
     position: relative
-    display: none
 
     +desktop-up
         display: block
@@ -109,31 +112,3 @@
         path
 
             fill: #333
-
-.mobile-social
-
-    background-color: $yellow
-    display: flex
-    align-items: center
-    justify-content: center
-
-    ul
-        width: auto
-
-        li
-            margin-right: 1.4em
-            display: inline-block
-
-            &:last-child
-                margin-right: 0
-
-            a
-
-                svg
-                    +size(40px)
-
-                    path
-                        fill: #333
-
-    +desktop-up
-        display: none
