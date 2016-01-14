@@ -36,79 +36,11 @@
         +desktop-up
             font-size: 5rem
 
-.toggle-overlay
-    overflow: hidden
-    position: relative
-    font-size: 1.5em
-    display: none
-
-    +desktop-up
-        display: block
-
-    &:hover
-
-        span
-
-            transform: translateX(100%)
-
-        &:before
-
-            z-index: 1
-            transform: translateX(0)
-
-    span
-        display: block
-        padding: .5em 1em
-        position: relative
-        /*background-color: map-get($social, dribbble)*/
-        background-color: $yellow
-        font-weight: 600
-        /*color: white*/
-        color: #333
-        transition: all .3s ease
-
-    &:before
-        position: absolute
-        top: 0
-        left: 0
-        width: 100%
-        height: 100%
-        z-index: -1
-        background-color: #fff
-        color: map-get($social, dribbble)
-        font-weight: 600
-        content: attr(data-hover)
-        line-height: 2.2
-        transition: all .3s ease
-        transform: translateX(25%)
-
 .contact__map
     position: relative
 
     +desktop-up
         display: block
 
-.details
-    display: flex
-    align-items: center
-    justify-content: space-between
-    margin-top: 2em
-    width: 80%
-
-.details li
-    display: flex
-    align-items: center
-    margin-bottom: 1em
-    font-weight: 600
-    font-size: 1.2em
-
-    &:last-child
-        margin-bottom: 0
-
-    svg
-        +size(25px)
-        margin-right: 10px
-
-        path
-
-            fill: #333
+#map
+    height: 100%

@@ -1,3 +1,2 @@
-import {test} from './lib/module';
-
-test.log()
+import {initMap} from './lib/maps';
+initMap()
