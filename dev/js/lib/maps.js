@@ -179,8 +179,7 @@ export function initMap() {
     ]
     let MapOptions = {
 
-        center: {lat: 50.825272, lng: -0.136574},
-        backgroundColor: '#b2fac9',
+        center: {lat: 50.826444, lng: -0.141589},
         zoom: 15,
         disableDefaultUI: true,
         draggable: false,
@@ -190,5 +189,24 @@ export function initMap() {
         styles: mapStyles
     };
 
+    google.maps.event.addDomListener(window, "resize", function() {
+		var center = map.getCenter();
+		google.maps.event.trigger(map, "resize");
+		map.setCenter(center);
+	});
+
     let map = new google.maps.Map(mapContainer, MapOptions);
+
+    let markerIcon = "/assets/img/marker.svg"
+
+    let markerOptions = {
+        position: {lat: 50.826444, lng: -0.141589},
+        map: map,
+        icon: markerIcon,
+        draggable: false,
+        animation: google.maps.Animation.BOUNCE
+    }
+
+    let brightonMarker = new google.maps.Marker(markerOptions)
+
 }
