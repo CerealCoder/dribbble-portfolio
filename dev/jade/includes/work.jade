@@ -1,276 +1,39 @@
 section.work
     
     h2.work__title My Latest Work
-    
+
     div.shots
-
-        figure.shots__shot
+    
+        template#shots-template
             
-            img(src="/assets/img/chill.jpg", alt="")
-            
-            figcaption.shot__info
+            | {{#each this}}
+            figure.shots__shot
                 
-                div.shot-caption
-                    h4.shot__title.meta(data-title=" This is the shot's title") This is the shot's title 
-                    h4.shot__date.meta  October 23, 1023
-                    a(href="/").shot__link.meta 
-                        span View Shot 
-                        include ../svg/dribbble.svg            
+                img(src="{{images.hidpi}}", alt="{{title}}")
                 
-                div.shot-stats
-
-                    span.views
-                        include ../svg/eye.svg
-                        | 32
-                    span.likes
-                        include ../svg/heart.svg
-                        | 43
-                    span.comments
-                        include ../svg/bubble.svg
-                        |3054
-                
-            div.mobile-shot-info
-                h3(data-title=" This is the shot's title") This is the shot's title 
-                a(href="/").shot__link--mobile
-                    include ../svg/dribbble.svg    
-                                
-        figure.shots__shot
-            
-            img(src="/assets/img/chill.jpg", alt="")
-            
-            figcaption.shot__info
-                
-                div.shot-caption
-                    h3.shot__title.meta(data-title=" This is the shot's title") This is the shot's title 
-                    h4.shot__date.meta  October 23, 1023
-                    a(href="/").shot__link.meta 
-                        span View Shot 
-                        include ../svg/dribbble.svg            
-                
-                div.shot-stats
-
-                    span.views
-                        include ../svg/eye.svg
-                        | 32
-                    span.likes
-                        include ../svg/heart.svg
-                        | 43
-                    span.comments
-                        include ../svg/bubble.svg
-                        |3054
-                
-            div.mobile-shot-info
-                h3(data-title=" This is the shot's title") This is the shot's title 
-                a(href="/").shot__link--mobile
-                    include ../svg/dribbble.svg
-                
-        figure.shots__shot
-            
-            img(src="/assets/img/chill.jpg", alt="")
-            
-            figcaption.shot__info
-                
-                div.shot-caption
-                    h3.shot__title.meta(data-title=" This is the shot's title") This is the shot's title 
-                    h4.shot__date.meta  October 23, 1023
-                    a(href="/").shot__link.meta 
-                        span View Shot 
-                        include ../svg/dribbble.svg            
-                
-                div.shot-stats
-
-                    span.views
-                        include ../svg/eye.svg
-                        | 32
-                    span.likes
-                        include ../svg/heart.svg
-                        | 43
-                    span.comments
-                        include ../svg/bubble.svg
-                        |3054
-                
-            div.mobile-shot-info
-                h3(data-title=" This is the shot's title") This is the shot's title 
-                a(href="/").shot__link--mobile
-                    include ../svg/dribbble.svg
+                figcaption.shot__info
                     
-        figure.shots__shot
-            
-            img(src="/assets/img/chill.jpg", alt="")
-            
-            figcaption.shot__info
-                
-                div.shot-caption
-                    h3.shot__title.meta(data-title=" This is the shot's title") This is the shot's title 
-                    h4.shot__date.meta  October 23, 1023
-                    a(href="/").shot__link.meta 
-                        span View Shot 
-                        include ../svg/dribbble.svg            
-                
-                div.shot-stats
-
-                    span.views
-                        include ../svg/eye.svg
-                        | 32
-                    span.likes
-                        include ../svg/heart.svg
-                        | 43
-                    span.comments
-                        include ../svg/bubble.svg
-                        |3054
-                
-            div.mobile-shot-info
-                h3(data-title=" This is the shot's title") This is the shot's title 
-                a(href="/").shot__link--mobile
-                    include ../svg/dribbble.svg
-                
-        figure.shots__shot
-            
-            img(src="/assets/img/chill.jpg", alt="")
-            
-            figcaption.shot__info
-                
-                div.shot-caption
-                    h3.shot__title.meta(data-title=" This is the shot's title") This is the shot's title 
-                    h4.shot__date.meta  October 23, 1023
-                    a(href="/").shot__link.meta 
-                        span View Shot 
-                        include ../svg/dribbble.svg            
-                
-                div.shot-stats
-
-                    span.views
-                        include ../svg/eye.svg
-                        | 32
-                    span.likes
-                        include ../svg/heart.svg
-                        | 43
-                    span.comments
-                        include ../svg/bubble.svg
-                        |3054
-                
-            div.mobile-shot-info
-                h3(data-title=" This is the shot's title") This is the shot's title 
-                a(href="/").shot__link--mobile
-                    include ../svg/dribbble.svg    
+                    div.shot-caption
+                        h4.shot__title.meta {{ title }} 
+                        h4.shot__date.meta  {{ created_at }}
+                        a(href="{{html_url}}").shot__link.meta 
+                            span View Shot 
+                            include ../svg/dribbble.svg            
                     
-        figure.shots__shot
-            
-            img(src="/assets/img/chill.jpg", alt="")
-            
-            figcaption.shot__info
-                
-                div.shot-caption
-                    h3.shot__title.meta(data-title=" This is the shot's title") This is the shot's title 
-                    h4.shot__date.meta  October 23, 1023
-                    a(href="/").shot__link.meta 
-                        span View Shot 
-                        include ../svg/dribbble.svg            
-                
-                div.shot-stats
+                    div.shot-stats
 
-                    span.views
-                        include ../svg/eye.svg
-                        | 32
-                    span.likes
-                        include ../svg/heart.svg
-                        | 43
-                    span.comments
-                        include ../svg/bubble.svg
-                        |3054
-                
-            div.mobile-shot-info
-                h3(data-title=" This is the shot's title") This is the shot's title 
-                a(href="/").shot__link--mobile
-                    include ../svg/dribbble.svg
-                
-        figure.shots__shot
-            
-            img(src="/assets/img/chill.jpg", alt="")
-            
-            figcaption.shot__info
-                
-                div.shot-caption
-                    h3.shot__title.meta(data-title=" This is the shot's title") This is the shot's title 
-                    h4.shot__date.meta  October 23, 1023
-                    a(href="/").shot__link.meta 
-                        span View Shot 
-                        include ../svg/dribbble.svg            
-                
-                div.shot-stats
-
-                    span.views
-                        include ../svg/eye.svg
-                        | 32
-                    span.likes
-                        include ../svg/heart.svg
-                        | 43
-                    span.comments
-                        include ../svg/bubble.svg
-                        |3054
-                
-            div.mobile-shot-info
-                h3(data-title=" This is the shot's title") This is the shot's title 
-                a(href="/").shot__link--mobile
-                    include ../svg/dribbble.svg
+                        span.views
+                            include ../svg/eye.svg
+                            | {{views_count}}
+                        span.likes
+                            include ../svg/heart.svg
+                            | {{likes_count}}
+                        span.comments
+                            include ../svg/bubble.svg
+                            | {{comments_count}}
                     
-        figure.shots__shot
-            
-            img(src="/assets/img/chill.jpg", alt="")
-            
-            figcaption.shot__info
-                
-                div.shot-caption
-                    h3.shot__title.meta(data-title=" This is the shot's title") This is the shot's title 
-                    h4.shot__date.meta  October 23, 1023
-                    a(href="/").shot__link.meta 
-                        span View Shot 
-                        include ../svg/dribbble.svg            
-                
-                div.shot-stats
-
-                    span.views
-                        include ../svg/eye.svg
-                        | 32
-                    span.likes
-                        include ../svg/heart.svg
-                        | 43
-                    span.comments
-                        include ../svg/bubble.svg
-                        |3054
-                
-            div.mobile-shot-info
-                h3(data-title=" This is the shot's title") This is the shot's title 
-                a(href="/").shot__link--mobile
-                    include ../svg/dribbble.svg
-                
-        figure.shots__shot
-            
-            img(src="/assets/img/chill.jpg", alt="")
-            
-            figcaption.shot__info
-                
-                div.shot-caption
-                    h3.shot__title.meta(data-title=" This is the shot's title") This is the shot's title 
-                    h4.shot__date.meta  October 23, 1023
-                    a(href="/").shot__link.meta 
-                        span View Shot 
-                        include ../svg/dribbble.svg            
-                
-                div.shot-stats
-
-                    span.views
-                        include ../svg/eye.svg
-                        | 32
-                    span.likes
-                        include ../svg/heart.svg
-                        | 43
-                    span.comments
-                        include ../svg/bubble.svg
-                        |3054
-                
-            div.mobile-shot-info
-                h3(data-title=" This is the shot's title") This is the shot's title 
-                a(href="/").shot__link--mobile
-                    include ../svg/dribbble.svg    
-                
+                div.mobile-shot-info
+                    h3 {{title}}
+                    a(href="{{html_url}}").shot__link--mobile
+                        include ../svg/dribbble.svg    
+            | {{/each}}

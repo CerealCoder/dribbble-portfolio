@@ -1,15 +1,13 @@
 import {initMap} from './lib/maps';
-import {ajax} from './lib/ajax';
+import ajax, * as dribbble from './lib/ajax';
 
-let dribUser = "https://api.dribbble.com/v1/users/hezy/"
 
-ajax(dribUser).then(function (userInfo) {
+let dribUser = "https://api.dribbble.com/v1/users/hezy/shots"
 
-    let name = userInfo.name
-    let bio = userInfo.bio
-    let likes = userInfo.likes_count
+dribbble.getShots(dribUser).then(function (shots) {
 
-    console.log(name + " BIO: " + bio + " LIKES " + likes);
+    dribbble.convertISOToDate(shots)
+    dribbble.renderShots(shots)
 
 }).catch(function (err) {
     console.log(err);

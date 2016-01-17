@@ -1,4 +1,4 @@
-export function ajax(endpointURL) {
+export function getShots(endpointURL) {
 
     return new Promise(
 
@@ -21,6 +21,30 @@ export function ajax(endpointURL) {
             request.open('GET', endpointURL, true);
             request.setRequestHeader('Authorization', 'Bearer ' + apiKey);
             request.send();
+
+    })
+}
+
+export function renderShots(shots) {
+
+    // Compile our template
+    let shotsTemplate = document.getElementById('shots-template')
+    let shotsSection  = document.querySelector('.shots')
+    let template = Handlebars.compile(shotsTemplate.innerHTML)
+
+    shotsSection.innerHTML = template(shots)
+
+}
+
+export function convertISOToDate(shots) {
+
+    shots.forEach(function(shot) {
+
+        let isoDate          = shot.created_at
+        let shotCreationDate = new Date(isoDate)
+        let readableDate     = shotCreationDate.toDateString()
+
+        shot["created_at"]   = readableDate
 
     })
 }
