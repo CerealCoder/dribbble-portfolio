@@ -1,18 +1,28 @@
-.main
+.loading-animation
 
-   height: 100vh
-   background-color: $primary
+    +position(absolute, 0 0 0 0)
+    background-color: #fff
+    visibility: visible
+    opacity: 1
+    transition: all .2s ease
 
-   display: flex
-   align-items: center
-   justify-content: center
+    .icon
+        +size(100%)
+        display: flex
+        align-items: center
+        justify-content: center
 
-   .main__section
-      color: $quarternary
+    svg
+        +size(100px)
+        overflow: inherit
 
-   .main__strapline
-      text-align: center
-      margin-top: 35px
-      color: $tertiary
-      font-size: 23px
-      font-weight: 600
+        path
+            fill: $primary
+            animation: pulseScale 1.1s ease infinite both
+
+        +tablet-up
+            +size(150px)
+
+    &.is-hidden
+        visibility: hidden
+        opacity: 0
