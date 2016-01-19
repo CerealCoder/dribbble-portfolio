@@ -8,6 +8,10 @@
     background: $primary
     color: $frost-white
 
+    &.show-meta .intro__meta
+        opacity: 1
+        transform: translateY(0)
+
 .intro__image
 
     +size(150px)
@@ -15,7 +19,8 @@
     border-radius: 50%
     overflow: hidden
     border: 2px solid #333
-    box-shadow: 1px 2px 3px #333
+    box-shadow: 2px 1px 2px lighten(#333, 10%)
+    box-shadow: inset hoff voff blur color
 
     img
         display: block
@@ -27,6 +32,9 @@
     font-weight: 400
     margin-bottom: 2rem
 
+    +large-desktop
+        font-size: 2.5rem
+
 h1
     font-size: 1.3em
     line-height: 1.6
@@ -35,3 +43,17 @@ h1
 
     +tablet-up
         font-size: 2rem
+
+    +large-desktop
+        font-size: 3rem
+
+.intro__meta
+    opacity: 0
+    transform: translateY(100%)
+    transition: all .2s ease
+
+    @for $i from 1 through 3
+
+        &:nth-child(#{$i})
+
+            transition-delay: .1s + ($i/10)
